@@ -1,0 +1,29 @@
+# controllers:
+#     resource: ../src/Controller/
+#     type: annotation
+
+# kernel:
+#     resource: ../src/Kernel.php
+#     type: annotation
+
+
+landing:
+    path: /landing
+    controller: App\Controller\LandingController::index
+
+
+getUsers:
+    path: /users
+    controller: App\Controller\UserController::getUsers
+
+createUsers:
+    path: /users/create
+    controller: App\Controller\UserController::createUsers
+
+updateUsers:
+    path: /users/update/{id}
+    controller: App\Controller\UserController::updateUsers
+
+deleteUsers:
+    path: /users/delete/{id}
+    controller: App\Controller\UserController::deleteUsers

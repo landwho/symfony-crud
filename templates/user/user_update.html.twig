@@ -1,0 +1,26 @@
+{% extends('base.html.twig') %}
+
+
+{% block title %}
+    <title> Actualizar Usuario! </title>
+{% endblock %}
+
+{% block body %}
+
+{{ include('landing/index.html.twig') }}
+
+
+
+    <div class="container">
+        <h1>Actualizar!</h1>
+        {{ form_start(form_users) }}
+        
+            {{ form_row(form_users.name) }}
+            {{ form_row(form_users.lastname) }}
+            {{ form_row(form_users.email) }}
+            {{ form_row(form_users.password) }}
+            {{ form_widget(form_users.submit) }}
+        
+        {{ form_end(form_users) }}
+     </div>
+{% endblock %}

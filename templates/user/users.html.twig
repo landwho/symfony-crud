@@ -1,0 +1,49 @@
+{% extends('base.html.twig') %}
+
+
+{% block title %}
+    <title> Listado de Usuarios! </title>
+{% endblock %}
+
+{% block body %}
+
+{{ include('landing/index.html.twig') }}
+
+    <div class="container">
+        <h1>Listado de usuarios</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in listUsers %}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.lastname}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.status}}</td>
+                        {% if user.status %}
+                        <td>
+                            <a href="{{ path('updateUsers',{'id':user.idUser}) }}" class="btn btn-primary">Modificar</a>
+                            <a href="{{ path('deleteUsers',{'id':user.idUser}) }}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                        {% endif %}
+                      
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+   
+{% endblock %}
